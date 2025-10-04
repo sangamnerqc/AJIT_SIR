@@ -1,302 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajit Sir's Physics Tutorials</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* BODY & FONTS */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajit Sir's Physics Tutorials</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    /* BODY & FONTS */
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        overflow-x: hidden;
+    }
 
-        /* BACKGROUND IMAGE */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1581091012184-29d91c8b1186?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-            z-index: -2;
-            filter: brightness(0.3);
-        }
+    /* BACKGROUND IMAGE */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1581091012184-29d91c8b1186?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+        z-index: -2;
+        filter: brightness(0.3);
+    }
 
-        /* PARTICLE ANIMATION */
-        .particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
+    /* PARTICLE ANIMATION */
+    .particles {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
 
-        .particle {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #00ffe7;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: float 12s linear infinite;
-        }
+    .particle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #00ffe7;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: float 12s linear infinite;
+    }
 
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0);}
-            50% { transform: translateY(-800px) translateX(200px);}
-            100% { transform: translateY(0) translateX(0);}
-        }
+    @keyframes float {
+        0% { transform: translateY(0) translateX(0);}
+        50% { transform: translateY(-800px) translateX(200px);}
+        100% { transform: translateY(0) translateX(0);}
+    }
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0,0,0,0.6);
-        }
+    /* HEADER */
+    header {
+        text-align: center;
+        padding: 60px 20px;
+        background: rgba(0,0,0,0.6);
+    }
 
-        header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5em;
-            color: #ffcc00;
-            text-shadow: 2px 2px #ff00ff;
-            margin-bottom: 10px;
-        }
+    header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5em;
+        color: #ffcc00;
+        text-shadow: 2px 2px #ff00ff;
+        margin-bottom: 10px;
+    }
 
-        header p {
-            font-size: 1.4em;
-            color: #fff;
-        }
+    header p {
+        font-size: 1.4em;
+        color: #fff;
+    }
 
-        /* NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: rgba(0,0,0,0.7);
-        }
+    /* NAVIGATION */
+    nav {
+        display: flex;
+        justify-content: center;
+        background: rgba(0,0,0,0.7);
+    }
 
-        nav a {
-            color: #fff;
-            padding: 15px 25px;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: all 0.3s ease;
-        }
+    nav a {
+        color: #fff;
+        padding: 15px 25px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
 
-        nav a:hover {
-            color: #ffcc00;
-            transform: scale(1.1);
-        }
+    nav a:hover {
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
 
-        /* SECTION */
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 40px auto;
-            background: rgba(0,0,0,0.6);
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-            animation: fadeIn 2s ease-in;
-        }
+    /* SECTION */
+    section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+        background: rgba(0,0,0,0.6);
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+        animation: fadeIn 2s ease-in;
+    }
 
-        section h2 {
-            color: #ff00ff;
-            margin-bottom: 25px;
-            text-align: center;
-            font-size: 2.5em;
-            font-family: 'Montserrat', sans-serif;
-        }
+    section h2 {
+        color: #ff00ff;
+        margin-bottom: 25px;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: 'Montserrat', sans-serif;
+    }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-            color: #fff;
-        }
+    ul {
+        list-style-type: square;
+        padding-left: 20px;
+        color: #fff;
+    }
 
-        /* FORM */
-        form input, form select, form textarea, form button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border: none;
-            font-size: 1em;
-        }
+    /* FORM */
+    form input, form select, form textarea, form button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1em;
+    }
 
-        form input, form select, form textarea {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
+    form input, form select, form textarea {
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+    }
 
-        form button {
-            background: linear-gradient(45deg, #ff00ff, #ffcc00);
-            color: #000;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
+    form button {
+        background: linear-gradient(45deg, #ff00ff, #ffcc00);
+        color: #000;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
 
-        form button:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px #ffcc00;
-        }
+    form button:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px #ffcc00;
+    }
 
-        #responseMsg {
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.2em;
-        }
+    #responseMsg {
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.2em;
+    }
 
-        /* FOOTER */
-        footer {
-            background: rgba(0,0,0,0.8);
-            text-align: center;
-            padding: 25px 10px;
-            color: #ffcc00;
-            font-weight: bold;
-        }
+    /* FOOTER */
+    footer {
+        background: rgba(0,0,0,0.8);
+        text-align: center;
+        padding: 25px 10px;
+        color: #ffcc00;
+        font-weight: bold;
+    }
 
-        /* ANIMATIONS */
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(30px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(30px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* HOME SECTION FLEX */
+    #home {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home .text {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+    }
+
+    #home .video {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #home video {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+</style>
 </head>
 <body>
 
-    <!-- Particle Animation -->
-    <div class="particles"></div>
-    <script>
-        const particleContainer = document.querySelector('.particles');
-        for(let i=0; i<60; i++){
-            let particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.top = Math.random() * 100 + 'vh';
-            particle.style.width = Math.random() * 8 + 4 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.animationDuration = 5 + Math.random() * 10 + 's';
-            particle.style.background = `hsl(${Math.random()*360},100%,50%)`;
-            particleContainer.appendChild(particle);
-        }
-    </script>
+<!-- Particle Animation -->
+<div class="particles"></div>
+<script>
+    const particleContainer = document.querySelector('.particles');
+    for(let i=0; i<60; i++){
+        let particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + 'vw';
+        particle.style.top = Math.random() * 100 + 'vh';
+        particle.style.width = Math.random() * 8 + 4 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.animationDuration = 5 + Math.random() * 10 + 's';
+        particle.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        particleContainer.appendChild(particle);
+    }
+</script>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Ajit Sir's Physics Tutorials</h1>
-        <p>Mastering Physics the Smart Way!</p>
-    </header>
+<!-- HEADER -->
+<header>
+    <h1>Ajit Sir's Physics Tutorials</h1>
+    <p>Mastering Physics the Smart Way!</p>
+</header>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- NAVIGATION -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <!-- HOME -->
-    <section id="home">
+<!-- HOME SECTION -->
+<section id="home">
+    <div class="text">
         <h2>Welcome</h2>
         <p>Empowering students with conceptual clarity and application-oriented learning in Physics. Enroll now for Class 11, 12, NEET, JEE, CET, and Foundation courses. Our aim is to make Physics easy, interesting, and practical for every student.</p>
-    </section>
+    </div>
+    <div class="video">
+        <video autoplay muted loop controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+    </div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Ajit Sir, with over a decade of teaching experience, brings passion and expertise into every lesson. Our tutorials are designed to build strong fundamentals through interactive learning, practical demonstrations, and real-life applications of physics concepts. Students gain confidence and excel in board exams and competitive exams alike.</p>
-    </section>
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Ajit Sir, with over a decade of teaching experience, brings passion and expertise into every lesson. Our tutorials are designed to build strong fundamentals through interactive learning, practical demonstrations, and real-life applications of physics concepts. Students gain confidence and excel in board exams and competitive exams alike.</p>
+</section>
 
-    <!-- COURSES -->
-    <section id="courses">
-        <h2>Our Courses</h2>
-        <ul>
-            <li>Class 11 Physics - CBSE / State Board</li>
-            <li>Class 12 Physics - CBSE / State Board</li>
-            <li>JEE Mains / Advanced Coaching</li>
-            <li>NEET Physics Crash Courses</li>
-            <li>Foundation Courses (8th–10th)</li>
-        </ul>
-    </section>
+<!-- COURSES SECTION -->
+<section id="courses">
+    <h2>Our Courses</h2>
+    <ul>
+        <li>Class 11 Physics - CBSE / State Board</li>
+        <li>Class 12 Physics - CBSE / State Board</li>
+        <li>JEE Mains / Advanced Coaching</li>
+        <li>NEET Physics Crash Courses</li>
+        <li>Foundation Courses (8th–10th)</li>
+    </ul>
+</section>
 
-    <!-- CONTACT + FORM -->
-    <section id="contact">
-        <h2>Contact & Student Enquiry</h2>
-        <p>Email: <a href="mailto:ajitsirphysics@gmail.com">ajitsirphysics@gmail.com</a></p>
-        <p>Phone: +91-XXXXXXXXXX</p>
-        <p>Location: [Your Coaching Address]</p>
-        <p>Follow us on Instagram/Facebook: <strong>@ajitsirphysics</strong></p>
+<!-- CONTACT + FORM -->
+<section id="contact">
+    <h2>Contact & Student Enquiry</h2>
+    <p>Email: <a href="mailto:ajitkaranjekar@gmail.com">ajitkaranjekar@gmail.com</a></p>
+    <p>Phone: +91-7620325138</p>
+    <p>Location: [First floor Morya-Gangai Shops and offices, Maldad road, Sangamner]</p>
+    <p>Follow us on Instagram/Facebook: <strong>@ajit_sir_physics_tutorials</strong></p>
 
-        <h3>Student Enquiry Form</h3>
-        <form id="enquiryForm">
-            <label>Name:</label>
-            <input type="text" name="name" required>
+    <h3>Student Enquiry Form</h3>
+    <form id="enquiryForm">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <label>Phone:</label>
+        <input type="tel" name="phone" required>
+        <label>Course Interested:</label>
+        <select name="course" required>
+            <option value="" disabled selected>Select a course</option>
+            <option value="Class 11 Physics">Class 11 Physics</option>
+            <option value="Class 12 Physics">Class 12 Physics</option>
+            <option value="JEE Mains/Advanced">JEE Mains/Advanced</option>
+            <option value="NEET Physics">NEET Physics</option>
+            <option value="Foundation Courses (8th–10th)">Foundation Courses (8th–10th)</option>
+        </select>
+        <label>Message / Query:</label>
+        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="responseMsg"></p>
 
-            <label>Email:</label>
-            <input type="email" name="email" required>
-
-            <label>Phone:</label>
-            <input type="tel" name="phone" required>
-
-            <label>Course Interested:</label>
-            <select name="course" required>
-                <option value="" disabled selected>Select a course</option>
-                <option value="Class 11 Physics">Class 11 Physics</option>
-                <option value="Class 12 Physics">Class 12 Physics</option>
-                <option value="JEE Mains/Advanced">JEE Mains/Advanced</option>
-                <option value="NEET Physics">NEET Physics</option>
-                <option value="Foundation Courses (8th–10th)">Foundation Courses (8th–10th)</option>
-            </select>
-
-            <label>Message / Query:</label>
-            <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
-        <p id="responseMsg"></p>
-
-        <script>
-            const form = document.getElementById('enquiryForm');
-            const responseMsg = document.getElementById('responseMsg');
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-                const searchParams = new URLSearchParams(formData);
-
-                fetch("YOUR_WEB_APP_URL", { // Replace with your Google Apps Script Web App URL
-                    method: "POST",
-                    body: searchParams
-                })
-                .then(response => response.text())
-                .then(data => {
-                    responseMsg.style.color = "#00ff00";
-                    responseMsg.innerText = "Thank you! Your enquiry has been submitted.";
-                    form.reset();
-                })
-                .catch(error => {
-                    responseMsg.style.color = "red";
-                    responseMsg.innerText = "Error! Please try again later.";
-                    console.error(error);
-                });
+    <script>
+        const form = document.getElementById('enquiryForm');
+        const responseMsg = document.getElementById('responseMsg');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const searchParams = new URLSearchParams(formData);
+            fetch("YOUR_WEB_APP_URL", { // Replace with your Google Apps Script Web App URL
+                method: "POST",
+                body: searchParams
+            })
+            .then(response => response.text())
+            .then(data => {
+                responseMsg.style.color = "#00ff00";
+                responseMsg.innerText = "Thank you! Your enquiry has been submitted.";
+                form.reset();
+            })
+            .catch(error => {
+                responseMsg.style.color = "red";
+                responseMsg.innerText = "Error! Please try again later.";
+                console.error(error);
             });
-        </script>
-    </section>
+        });
+    </script>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Ajit Sir's Physics Tutorials. All rights reserved
+<footer>
+    <p>&copy; 2025 Ajit Sir's Physics Tutorials. All rights reserved.</p>
+</footer>
+</body>
+</html>
